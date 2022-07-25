@@ -5,6 +5,7 @@ import com.portfolio.aehwnd.Entity.Persona;
 import com.portfolio.aehwnd.Interface.IPersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,16 +16,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200/")
 public class PersonaController {
     @Autowired IPersonaService ipersonaService;
     
     @GetMapping("personas/traer")
     public List<Persona> getPersona(){
-        return ipersonaService.getPersona();
+        return ipersonaService.traerPersonas();
     }
+    
     @GetMapping("personas/traer/perfil")
     public Persona traerPersona(){
-        return ipersonaService.buscarPersona((long).1);
+        return ipersonaService.buscarPersona(1);
                 
     }
     
@@ -41,7 +44,7 @@ public class PersonaController {
     
     
     @PutMapping("/personas/editar/{id}")
-    public Persona editarPersona(@PathVariable Long id,
+    public Persona editarPersona(@PathVariable long id,
             @RequestParam("nombre") String nombreMod,
             @RequestParam("apellido") String apellidoMod,
             @RequestParam("img") String imgMod){

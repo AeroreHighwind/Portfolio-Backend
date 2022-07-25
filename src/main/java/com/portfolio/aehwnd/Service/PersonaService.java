@@ -14,9 +14,10 @@ public class PersonaService implements IPersonaService{
     @Autowired IPersonaRepository ipersonaRepository;
 
     @Override
-    public List<Persona> getPersona() {
+    public List<Persona> traerPersonas() {
        return ipersonaRepository.findAll();
     }
+    
 
     @Override
     public void guardarPersona(Persona persona) {
@@ -24,12 +25,12 @@ public class PersonaService implements IPersonaService{
     }
 
     @Override
-    public void borrarPersona(Long id) {
+    public void borrarPersona(long id) {
          ipersonaRepository.deleteById(id);
     }
 
     @Override
-    public Persona buscarPersona(Long id) {
+    public Persona buscarPersona(long id) {
        return ipersonaRepository.findById(id).orElse(null);
     }
     

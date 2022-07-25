@@ -7,11 +7,11 @@ import java.util.List;
 
 public interface IPersonaService {
     
-    public List<Persona> getPersona();
+    public List<Persona> traerPersonas();
     
     public void guardarPersona(Persona persona);
     
-    public void borrarPersona(Long id);
+    public void borrarPersona(long id);
     
-    public Persona buscarPersona(Long id);
+    public Persona buscarPersona(long id);
 }

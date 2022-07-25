@@ -14,6 +14,7 @@ import lombok.Setter;
 @Getter @Setter
 @Entity
 public class Persona {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -33,6 +34,7 @@ public class Persona {
             + "min, 31 max.)")
     private String img;
     
-    
+    @Size(min = 0, max = 1000, message = "La descripcion no cumple con la longitud requerida (1000 caracteres max)")
+    private String about;
     
 }
