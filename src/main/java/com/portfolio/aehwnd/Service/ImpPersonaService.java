@@ -9,29 +9,29 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PersonaService implements IPersonaService{
-    
+public class ImpPersonaService implements IPersonaService{
     @Autowired IPersonaRepository ipersonaRepository;
-
-    @Override
-    public List<Persona> traerPersonas() {
-       return ipersonaRepository.findAll();
-    }
     
+    @Override
+    public List<Persona> getPersona() {
+        List<Persona> persona = ipersonaRepository.findAll();
+        return persona;
+    }
 
     @Override
-    public void guardarPersona(Persona persona) {
+    public void savePersona(Persona persona) {
         ipersonaRepository.save(persona);
     }
 
     @Override
-    public void borrarPersona(long id) {
-         ipersonaRepository.deleteById(id);
+    public void deletePersona(long id) {
+        ipersonaRepository.deleteById(id);
     }
 
     @Override
-    public Persona buscarPersona(long id) {
-       return ipersonaRepository.findById(id).orElse(null);
+    public Persona findPersona(long id) {
+        Persona persona = ipersonaRepository.findById(id).orElse(null);
+        return persona;
     }
     
 }

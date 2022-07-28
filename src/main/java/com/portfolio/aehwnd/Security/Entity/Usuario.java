@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.portfolio.aehwnd.Security.Entity;
 
 import java.util.HashSet;
@@ -28,22 +24,23 @@ public class Usuario {
     @Column(unique = true)
     private String nombreUsuario;
     @NotNull
-    private String Email;
+    private String email;
     @NotNull
     private String password;
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "usuario_rol",joinColumns = @JoinColumn(name="usuario_id"),inverseJoinColumns = @JoinColumn(name = "rol_id"))
+    @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name ="usuario_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
     private Set<Rol> roles = new HashSet<>();
-
+    
     public Usuario() {
     }
 
-    public Usuario(String nombre, String nombreUsuario, String Email, String password) {
+    public Usuario(String nombre, String nombreUsuario, String email, String password) {
         this.nombre = nombre;
         this.nombreUsuario = nombreUsuario;
-        this.Email = Email;
+        this.email = email;
         this.password = password;
     }
+    
 
     public int getId() {
         return id;
@@ -70,11 +67,11 @@ public class Usuario {
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
-    public void setEmail(String Email) {
-        this.Email = Email;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -92,9 +89,5 @@ public class Usuario {
     public void setRoles(Set<Rol> roles) {
         this.roles = roles;
     }
-    
-    
-    
-    
     
 }
