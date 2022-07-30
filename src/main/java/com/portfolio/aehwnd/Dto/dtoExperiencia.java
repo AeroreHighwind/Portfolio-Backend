@@ -2,13 +2,20 @@
 package com.portfolio.aehwnd.Dto;
 
 import javax.validation.constraints.NotBlank;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class dtoExperiencia {
+    
     @NotBlank
     private String nombreE;
+    
     @NotBlank
     private String descripcionE;
    
+    //Constructors
     public dtoExperiencia() {
     }
 
@@ -17,21 +24,4 @@ public class dtoExperiencia {
         this.descripcionE = descripcionE;
     }
 
-
-    public String getNombreE() {
-        return nombreE;
-    }
-
-    public void setNombreE(String nombreE) {
-        this.nombreE = nombreE;
-    }
-
-    public String getDescripcionE() {
-        return descripcionE;
-    }
-
-    public void setDescripcionE(String descripcionE) {
-        this.descripcionE = descripcionE;
-    }
-    
 }
