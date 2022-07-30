@@ -30,11 +30,22 @@ public class Persona {
     private String apellido;
     
    
-    @Size(min = 1, max = 50, message = "El nombre ingresado no cumple con la longitud requerida (1 caracter"
-            + "min, 31 max.)")
+    @Size(min = 1, max = 50, message = "La URL ingresada no cumple con la longitud requerida (1 caracter"
+            + "min, 50 max.)")
     private String img;
     
-    @Size(min = 0, max = 1000, message = "La descripcion no cumple con la longitud requerida (1000 caracteres max)")
+    @Size(min = 0, max = 255, message = "La descripcion no cumple con la longitud requerida (255 caracteres max)")
     private String about;
+    
+    @Size(min = 1, max = 50, message = "La ocupación ingresada no cumple con la longitud requerida (1 caracter"
+            + "min, 50 max.)")
+    private String job;
+    
+        @Size(min = 1, max = 100, message = "La institucion ingresada no cumple con la longitud requerida (1 caracter"
+            + "min, 100 max.)")
+    private String mainEdu;
+    @Size(min = 1, max = 100, message = "La ubicación ingresada no cumple con la longitud requerida (1 caracter"
+            + "min, 100 max.)")
+    private String location;
     
 }
