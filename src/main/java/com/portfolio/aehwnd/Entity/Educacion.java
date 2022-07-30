@@ -16,14 +16,14 @@ public class Educacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String nombreE;
-    private String descripcionE;
+    private String nombreEdu;
+    private String descripcionEdu;
 
     public Educacion() {
     }
 
     public Educacion(String nombreE, String descripcionE) {
-        this.nombreE = nombreE;
-        this.descripcionE = descripcionE;
+        this.nombreEdu = nombreE;
+        this.descripcionEdu = descripcionE;
     }
 }
