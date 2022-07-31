@@ -19,14 +19,16 @@ public class Habilidad {
     private String nombreH;
     private int porcentaje;
     private boolean hard;
+    private String imgURL;
 
     public Habilidad() {
     }
 
-    public Habilidad(String nombreH, int porcentaje, boolean hard) {
+    public Habilidad(String nombreH, int porcentaje, boolean hard, String imgURL) {
         this.nombreH = nombreH;
         this.porcentaje = porcentaje;
         this.hard = hard;
+        this.imgURL = imgURL;
     }
     
     

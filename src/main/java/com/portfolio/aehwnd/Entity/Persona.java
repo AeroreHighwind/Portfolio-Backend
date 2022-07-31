@@ -44,8 +44,26 @@ public class Persona {
         @Size(min = 1, max = 100, message = "La institucion ingresada no cumple con la longitud requerida (1 caracter"
             + "min, 100 max.)")
     private String mainEdu;
+        
     @Size(min = 1, max = 100, message = "La ubicación ingresada no cumple con la longitud requerida (1 caracter"
             + "min, 100 max.)")
     private String location;
+    
+        @Size(min = 1, max = 255, message = "La URL ingresada no cumple con la longitud requerida (1 caracter"
+            + "min, 255 max.)")
+    private String locationImg;
+        
+        @Size(min = 1, max = 255, message = "La URL ingresada no cumple con la longitud requerida (1 caracter"
+            + "min, 255 max.)")
+    private String locationAltImg;
+        
+        @Size(min = 1, max = 255, message = "La URL ingresada no cumple con la longitud requerida (1 caracter"
+            + "min, 255 max.)")
+    private String mainEduImg;
+        
+        @Size(min = 1, max = 255, message = "La URL ingresada no cumple con la longitud requerida (1 caracter"
+            + "min, 255 max.)")
+    private String mainEduAltImg;
+
     
 }

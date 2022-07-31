@@ -61,7 +61,7 @@ public class HabilidadController {
             return new ResponseEntity(new Mensaje("Esa habilidad existe"), HttpStatus.BAD_REQUEST);
         }
 
-        Habilidad habilidad = new Habilidad(dtohab.getNombreH(), dtohab.getPorcentaje(),dtohab.isHard());
+        Habilidad habilidad = new Habilidad(dtohab.getNombreH(), dtohab.getPorcentaje(),dtohab.isHard(), dtohab.getImgURL());
         habService.save(habilidad);
 
         return new ResponseEntity(new Mensaje("Habilidad agregada"), HttpStatus.OK);

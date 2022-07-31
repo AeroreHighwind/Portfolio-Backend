@@ -49,7 +49,11 @@ public class PersonaController {
                                @RequestParam("about") String nuevoAbout,
                                @RequestParam("job") String nuevoJob,
                                @RequestParam("mainEdu") String nuevaMainEdu,
-                               @RequestParam("location") String nuevaLocation){
+                               @RequestParam("location") String nuevaLocation,
+                               @RequestParam("locationImg") String nuevaLocationImg,
+                               @RequestParam("locationAltImg") String nuevaLocationAltImg,
+                               @RequestParam("mainEduImg") String nuevaMainEduImg,
+                               @RequestParam("mainEduAltImg") String nuevaAltEduImg){
         Persona persona = ipersonaService.findPersona(id);
         
         persona.setNombre(nuevoNombre);
@@ -59,10 +63,16 @@ public class PersonaController {
         persona.setJob(nuevoJob);
         persona.setMainEdu(nuevaMainEdu);
         persona.setLocation(nuevaLocation);
+        persona.setLocationImg(nuevaLocationImg);
+        persona.setLocationAltImg(nuevaLocationAltImg);
+        persona.setMainEduImg(nuevaMainEduImg);
+        persona.setMainEduAltImg(nuevaAltEduImg);
         
         ipersonaService.savePersona(persona);
         return persona;
     }
+    
+    
     
     @GetMapping("personas/traer/perfil")
     public Persona findPersona(){

@@ -16,16 +16,19 @@ public class dtoHabilidad {
     
     @NotBlank
     private boolean hard;
+    
+    private String imgURL;
 
     //constructors
     
     public dtoHabilidad() {
     }
 
-    public dtoHabilidad(String nombreH, int porcentaje, boolean hard) {
+    public dtoHabilidad(String nombreH, int porcentaje, boolean hard, String imgURL) {
         this.nombreH = nombreH;
         this.porcentaje = porcentaje;
         this.hard = hard;
+        this.imgURL = imgURL;
     }
 
 }
